@@ -1,0 +1,143 @@
+//: Playground - noun: a place where people can play
+
+import UIKit
+
+let john = Person()
+if let roomCount = john.residence?.numberOfRooms {
+    print("John's residence has \(roomCount) room(s).")
+} else {
+    print("Unable to retrieve the number of rooms.")}
+
+
+class Address {
+    var buildingName: String?
+    var buildingNumber: String?
+    var street: String?
+    func buildingIdentifier() -> String? {
+        if buildingName != nil {
+            return buildingName
+            } else if buildingNumber != nil {
+            return buildingNumber
+            } else { return nil } }}
+
+class Person { var residence: Residence? }
+class Residence {
+    var rooms = [Room]()
+    var numberOfRooms: Int { return rooms.count }
+    subscript( i: Int) -> Room {
+        get { return rooms[i] }
+        set { rooms[i] = newValue } }
+    func printNumberOfRooms() {
+        print("The number of rooms is \(numberOfRooms)") }
+    var address: Address? }
+class Room {
+    let name: String
+    init(name: String) { self.name = name } }
+
+func createAddress() -> Address {
+    print("Function was called.")
+    let someAddress = Address()
+    someAddress.buildingNumber = "29"
+    someAddress.street = "Acacia Road"
+    return someAddress}
+
+john.residence?.address = createAddress()
+
+if john.residence?.printNumberOfRooms() != nil {
+    print("It was possible to print the number of rooms.")
+    } else { print("It was not possible to print the number of rooms.")}
+
+struct Fahrenheit {
+    var temperature: Double
+    init() { temperature = 32.0 }}
+var f = Fahrenheit()
+print("The default temperature is \(f.temperature)° Fahrenheit")
+
+struct Celsius {
+    var temperatureInCelsius: Double
+    init(fromFahrenheit fahrenheit: Double) {
+        temperatureInCelsius = (fahrenheit - 32.0) / 1.8 }
+    init(fromKelvin kelvin: Double) {
+       temperatureInCelsius = kelvin - 273.15 }}
+let boilingPointOfWater = Celsius(fromFahrenheit: 212.0)
+
+let freezingPointOfWater = Celsius(fromKelvin: 273.15)
+
+struct Size {
+    var width = 0.0, height = 0.0}
+let twoByTwo = Size(width: 2.0, height: 2.0)
+
+class Food {
+    var name: String
+    init(name: String) {
+        self.name = name }
+    convenience init() { self.init(name: "[Unnamed]") }}
+
+class RecipeIngredient: Food {
+    var quantity: Int
+    init(name: String, quantity: Int) { self.quantity = quantity
+        super.init(name: name) }
+    override convenience init(name: String) {
+        self.init(name: name, quantity: 1) }}
+
+class ShoppingListItem: RecipeIngredient {
+    var purchased = false
+    var description: String {
+        var output = "\(quantity) x \(name)"
+        output += purchased ? " ✔" : " ✘"
+        return output }}
+
+var breakfastList = [
+    ShoppingListItem(),
+    ShoppingListItem(name: "Bacon"),
+    ShoppingListItem(name: "Eggs", quantity: 6)]
+
+breakfastList[0].name = "Orange juice"
+breakfastList[0].purchased = true
+for item in breakfastList { print(item.description) }
+
+struct Animal {
+    let species: String
+   init?(species: String) {
+        if species.isEmpty { return nil }
+       self.species = species }}
+let someCreature = Animal(species: "Giraffe")
+
+enum TemperatureUnit {
+    case Kelvin, Celsius, Fahrenheit
+    init?(symbol: Character) {
+        switch symbol {
+            case "K":
+                self = .Kelvin
+            case "C":
+                self = .Celsius
+            case "F":
+                self = .Fahrenheit
+            default:
+                    return nil } }}
+
+class Document {
+    var name: String?
+    init() {}
+    init?(name: String) {
+        if name.isEmpty { return nil }
+        self.name = name }}
+
+class AutomaticallyNamedDocument: Document {
+    override init() {
+        super.init()
+        self.name = "[Untitled]" }
+    override init(name: String) {
+        super.init()
+        if name.isEmpty {
+            self.name = "[Untitled]" }
+        else {
+            self.name = name } }}
+
+class Player {
+    var coinsInPurse: Int
+    init(coins: Int) {
+        coinsInPurse = Bank.vendCoins(coins) }
+    func winCoins(coins: Int) {
+        coinsInPurse += Bank.vendCoins(coins) }
+    deinit { Bank.receiveCoins(coinsInPurse) }
