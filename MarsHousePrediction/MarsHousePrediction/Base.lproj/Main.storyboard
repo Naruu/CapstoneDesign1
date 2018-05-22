@@ -45,24 +45,35 @@
                                     <constraint firstItem="r7L-M5-mDb" firstAttribute="width" secondItem="EZu-Fg-Zhi" secondAttribute="width" id="U8V-VJ-ibh"/>
                                 </constraints>
                             </stackView>
-                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RSq-uK-Rv6">
-                                <rect key="frame" x="0.0" y="250" width="375" height="181"/>
-                            </pickerView>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gCu-rO-4A7">
                                 <rect key="frame" x="0.0" y="445" width="375" height="222"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RSq-uK-Rv6">
+                                <rect key="frame" x="0.0" y="244" width="375" height="181"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Vsq-rG-vxB"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="qgM-NN-hK4"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="gCu-rO-4A7" firstAttribute="height" secondItem="vP8-vw-bFt" secondAttribute="height" id="1kE-ok-0Av"/>
+                            <constraint firstItem="RSq-uK-Rv6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0yw-Q4-s9r"/>
+                            <constraint firstItem="gCu-rO-4A7" firstAttribute="height" secondItem="vP8-vw-bFt" secondAttribute="height" id="1K8-9A-ofT"/>
+                            <constraint firstItem="gCu-rO-4A7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2ft-wx-47s"/>
+                            <constraint firstItem="RSq-uK-Rv6" firstAttribute="height" secondItem="vP8-vw-bFt" secondAttribute="height" id="3ZP-4B-cbf"/>
+                            <constraint firstItem="RSq-uK-Rv6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8KG-AJ-3QU"/>
                             <constraint firstItem="vP8-vw-bFt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GcP-EV-p9P"/>
-                            <constraint firstItem="RSq-uK-Rv6" firstAttribute="height" secondItem="vP8-vw-bFt" secondAttribute="height" id="JaD-e6-vHI"/>
                             <constraint firstItem="vP8-vw-bFt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SXZ-ad-iSI"/>
+                            <constraint firstItem="gCu-rO-4A7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pfj-8y-KAY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vP8-vw-bFt" secondAttribute="trailing" id="vqQ-QP-qXf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="picekrView" destination="RSq-uK-Rv6" id="1tx-7P-jgd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
