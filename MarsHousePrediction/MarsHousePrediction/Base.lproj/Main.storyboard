@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,62 +19,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vP8-vw-bFt">
-                                <rect key="frame" x="0.0" y="20" width="375" height="216"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="glo-A1-MHf">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Solar Panels" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZu-Fg-Zhi">
-                                        <rect key="frame" x="0.0" y="0.0" width="125" height="216"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Greenhouses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynV-Ub-w46">
-                                        <rect key="frame" x="125" y="0.0" width="125" height="216"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Acres" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7L-M5-mDb">
-                                        <rect key="frame" x="250" y="0.0" width="125" height="216"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vP8-vw-bFt">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="215.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Solar Panels" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZu-Fg-Zhi">
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="215.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Greenhouses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynV-Ub-w46">
+                                                <rect key="frame" x="125" y="0.0" width="125" height="215.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Acres" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7L-M5-mDb">
+                                                <rect key="frame" x="250" y="0.0" width="125" height="215.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="ynV-Ub-w46" firstAttribute="width" secondItem="EZu-Fg-Zhi" secondAttribute="width" id="9BQ-pI-2Tg"/>
+                                            <constraint firstItem="r7L-M5-mDb" firstAttribute="width" secondItem="EZu-Fg-Zhi" secondAttribute="width" id="U8V-VJ-ibh"/>
+                                        </constraints>
+                                    </stackView>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSq-uK-Rv6">
+                                        <rect key="frame" x="0.0" y="215.5" width="375" height="216"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="Vsq-rG-vxB"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="qgM-NN-hK4"/>
+                                        </connections>
+                                    </pickerView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCu-rO-4A7">
+                                        <rect key="frame" x="0.0" y="431.5" width="375" height="215.5"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="ynV-Ub-w46" firstAttribute="width" secondItem="EZu-Fg-Zhi" secondAttribute="width" id="9BQ-pI-2Tg"/>
-                                    <constraint firstItem="r7L-M5-mDb" firstAttribute="width" secondItem="EZu-Fg-Zhi" secondAttribute="width" id="U8V-VJ-ibh"/>
+                                    <constraint firstItem="RSq-uK-Rv6" firstAttribute="height" secondItem="vP8-vw-bFt" secondAttribute="height" id="0xG-QL-wA4"/>
+                                    <constraint firstItem="gCu-rO-4A7" firstAttribute="height" secondItem="vP8-vw-bFt" secondAttribute="height" id="bC4-kp-2dn"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gCu-rO-4A7">
-                                <rect key="frame" x="0.0" y="445" width="375" height="222"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RSq-uK-Rv6">
-                                <rect key="frame" x="0.0" y="244" width="375" height="181"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Vsq-rG-vxB"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="qgM-NN-hK4"/>
-                                </connections>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="RSq-uK-Rv6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0yw-Q4-s9r"/>
-                            <constraint firstItem="gCu-rO-4A7" firstAttribute="height" secondItem="vP8-vw-bFt" secondAttribute="height" id="1K8-9A-ofT"/>
-                            <constraint firstItem="gCu-rO-4A7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2ft-wx-47s"/>
-                            <constraint firstItem="RSq-uK-Rv6" firstAttribute="height" secondItem="vP8-vw-bFt" secondAttribute="height" id="3ZP-4B-cbf"/>
-                            <constraint firstItem="RSq-uK-Rv6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8KG-AJ-3QU"/>
-                            <constraint firstItem="vP8-vw-bFt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GcP-EV-p9P"/>
-                            <constraint firstItem="vP8-vw-bFt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SXZ-ad-iSI"/>
-                            <constraint firstItem="gCu-rO-4A7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pfj-8y-KAY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vP8-vw-bFt" secondAttribute="trailing" id="vqQ-QP-qXf"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="glo-A1-MHf" secondAttribute="bottom" id="1dE-R2-9qF"/>
+                            <constraint firstItem="glo-A1-MHf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3TT-B9-eSq"/>
+                            <constraint firstItem="glo-A1-MHf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="du5-am-rgj"/>
+                            <constraint firstItem="glo-A1-MHf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iOl-8T-DvM"/>
+                            <constraint firstItem="glo-A1-MHf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kpV-59-ytx"/>
+                            <constraint firstItem="glo-A1-MHf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pvd-es-HXj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="picekrView" destination="RSq-uK-Rv6" id="1tx-7P-jgd"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
