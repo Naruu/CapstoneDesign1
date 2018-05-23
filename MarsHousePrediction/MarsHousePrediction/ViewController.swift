@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreML
 
 enum Feature : Int {
     case solarPanels = 0, greenhouses, size }
@@ -17,8 +18,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     let pickerDataSource = self
     let model = MarsHabitatPricer()
     
+    let priceFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.maximumFractionDigits = 0
+        formatter.usesGroupingSeparator = true
+        return formatter
+    }()
+    
+    
     @IBOutlet weak var pickerView: UIPickerView! {
-        didSet{
+        didSet{/*
             pickerView.delegate = self
             pickerView.dataSource = self
             let features: [Feature] = [.solarPanels, .greenhouses, . size]
@@ -28,7 +38,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 
                 print("feature.rawValue=",feature.rawValue)
             }
-        }
+        */}
     }
  
     @IBOutlet weak var priceLabel: UILabel!
@@ -69,9 +79,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             return pickerView.selectedRow(inComponent: feature.rawValue)
         }
         
-        let solarPanels = pickerDataSource.value(for: selectedRow(for: .solarPanels), feature: .solarPanels)
-        let greenhouses = pickerDataSource.value(for: selectedRow(for: .greenhouses), feature: .greenhouses)
-        let size = pickerDataSource.value(for: selectedRow(for: .size), feature: .size)
+        let solarPanels = self.value(for: selectedRow(for: .solarPanels), feature: .solarPanels)
+        let greenhouses = self.value(for: selectedRow(for: .greenhouses), feature: .greenhouses)
+        let size = self.value(for: selectedRow(for: .size), feature: .size)
         
         guard let marsHabitatPricerOutput = try? model.prediction(solarPanels: solarPanels, greenhouses: greenhouses, size: size) else {
             fatalError("Unexpected runtime error.")
@@ -100,6 +110,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         return value!
     }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         updatePredictedPrice()
