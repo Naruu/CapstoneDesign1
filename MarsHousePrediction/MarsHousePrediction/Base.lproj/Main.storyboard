@@ -58,7 +58,35 @@
                                     </pickerView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCu-rO-4A7">
                                         <rect key="frame" x="0.0" y="431.5" width="375" height="215.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2SE-Kv-qKn">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="215.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Predicted Price(millions)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D72-zP-slo">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pQ-Zv-8ZE">
+                                                        <rect key="frame" x="0.0" y="108" width="375" height="107.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="9pQ-Zv-8ZE" firstAttribute="height" secondItem="D72-zP-slo" secondAttribute="height" id="vNS-Jl-u29"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="2SE-Kv-qKn" secondAttribute="trailing" id="al9-LZ-bYr"/>
+                                            <constraint firstItem="2SE-Kv-qKn" firstAttribute="top" secondItem="gCu-rO-4A7" secondAttribute="top" id="hjK-pF-gcT"/>
+                                            <constraint firstItem="2SE-Kv-qKn" firstAttribute="leading" secondItem="gCu-rO-4A7" secondAttribute="leading" id="tVh-YO-AMc"/>
+                                            <constraint firstAttribute="bottom" secondItem="2SE-Kv-qKn" secondAttribute="bottom" id="v3t-Mr-bQS"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -78,6 +106,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="priceLabel" destination="D72-zP-slo" id="ZAy-7v-K9g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

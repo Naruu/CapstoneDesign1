@@ -15,6 +15,7 @@ enum Feature : Int {
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     let pickerDataSource = self
+    let model = MarsHabitatPricer()
     
     @IBOutlet weak var pickerView: UIPickerView! {
         didSet{
@@ -29,6 +30,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
         }
     }
+ 
+    @IBOutlet weak var priceLabel: UILabel!
     
     
     private let solarPanelsDataSource = SolarPanelDataSource()
@@ -58,8 +61,26 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print("Selected row = ", row)
+        updatePredictedPrice()
     }
-
+    
+    func updatePredictedPrice() {
+        func selectedRow(for feature: Feature) -> Int {
+            return pickerView.selectedRow(inComponent: feature.rawValue)
+        }
+        
+        let solarPanels = pickerDataSource.value(for: selectedRow(for: .solarPanels), feature: .solarPanels)
+        let greenhouses = pickerDataSource.value(for: selectedRow(for: .greenhouses), feature: .greenhouses)
+        let size = pickerDataSource.value(for: selectedRow(for: .size), feature: .size)
+        
+        guard let marsHabitatPricerOutput = try? model.prediction(solarPanels: solarPanels, greenhouses: greenhouses, size: size) else {
+            fatalError("Unexpected runtime error.")
+        }
+        
+        let price = marsHabitatPricerOutput.price
+        priceLabel.text = priceFormatter.string(for: price)
+    }
+    
     
     func title(for row: Int, feature: Feature) -> String?{
         switch feature{
@@ -81,6 +102,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        updatePredictedPrice()
         // Do any additional setup after loading the view, typically from a nib.
     }
 

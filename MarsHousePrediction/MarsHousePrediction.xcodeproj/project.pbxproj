@@ -12,6 +12,7 @@
 		9AFBBE1F20B4DC2F00AB5D14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AFBBE1D20B4DC2F00AB5D14 /* Main.storyboard */; };
 		9AFBBE2120B4DC2F00AB5D14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AFBBE2020B4DC2F00AB5D14 /* Assets.xcassets */; };
 		9AFBBE2420B4DC2F00AB5D14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AFBBE2220B4DC2F00AB5D14 /* LaunchScreen.storyboard */; };
+		9AFBBE2C20B4E7A500AB5D14 /* marshabitatpricer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9AFBBE2B20B4E7A500AB5D14 /* marshabitatpricer.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		9AFBBE2020B4DC2F00AB5D14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9AFBBE2320B4DC2F00AB5D14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9AFBBE2520B4DC2F00AB5D14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AFBBE2B20B4E7A500AB5D14 /* marshabitatpricer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = marshabitatpricer.mlmodel; path = ../../../../Downloads/marshabitatpricer.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				9AFBBE1920B4DC2F00AB5D14 /* AppDelegate.swift */,
 				9AFBBE1B20B4DC2F00AB5D14 /* ViewController.swift */,
+				9AFBBE2B20B4E7A500AB5D14 /* marshabitatpricer.mlmodel */,
 				9AFBBE1D20B4DC2F00AB5D14 /* Main.storyboard */,
 				9AFBBE2020B4DC2F00AB5D14 /* Assets.xcassets */,
 				9AFBBE2220B4DC2F00AB5D14 /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AFBBE2C20B4E7A500AB5D14 /* marshabitatpricer.mlmodel in Sources */,
 				9AFBBE1C20B4DC2F00AB5D14 /* ViewController.swift in Sources */,
 				9AFBBE1A20B4DC2F00AB5D14 /* AppDelegate.swift in Sources */,
 			);
