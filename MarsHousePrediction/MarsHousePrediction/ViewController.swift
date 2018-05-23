@@ -16,29 +16,28 @@ enum Feature : Int {
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     let pickerDataSource = self
-    let model = MarsHabitatPricer()
+    let model = marshabitatpricer()
     
     let priceFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.maximumFractionDigits = 0
         formatter.usesGroupingSeparator = true
+        formatter.locale = Locale(identifier: "en_US")
         return formatter
     }()
     
-    
     @IBOutlet weak var pickerView: UIPickerView! {
-        didSet{/*
+        didSet{
             pickerView.delegate = self
             pickerView.dataSource = self
             let features: [Feature] = [.solarPanels, .greenhouses, . size]
             
             for feature in features {
                 pickerView.selectRow(2, inComponent: feature.rawValue, animated: false)
-                
                 print("feature.rawValue=",feature.rawValue)
             }
-        */}
+        }
     }
  
     @IBOutlet weak var priceLabel: UILabel!
