@@ -12,8 +12,9 @@ enum Feature : Int {
     case solarPanels = 0, greenhouses, size }
 
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    let model = marshabitatpricer()
     let pickerDataSource = self
     
     @IBOutlet weak var pickerView: UIPickerView! {
@@ -24,71 +25,115 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             
             for feature in features {
                 pickerView.selectRow(2, inComponent: feature.rawValue, animated: false)
-                
                 print("feature.rawValue=",feature.rawValue)
             }
         }
     }
     
+    let priceFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.maximumFractionDigits = 0
+        formatter.usesGroupingSeparator = true
+        formatter.locale = Locale(identifier: "en_US")
+        return formatter
+    }()
+    
+    
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var price: UILabel!
+ 
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updatePredictedPrice()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
     
     private let solarPanelsDataSource = SolarPanelDataSource()
     private let greenhousesDataSource = GreenhousesDataSource()
     private let sizeDataSource = SizeDataSource()
     
+    // MARK: - Helpers
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int{
-        return 3
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-        switch Feature(rawValue: component)!{
-        case .solarPanels:  return solarPanelsDataSource.values.count
-        case .greenhouses:  return greenhousesDataSource.values.count
-        case .size:         return sizeDataSource.values.count
-        }
-    }
-    
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        guard let feature = Feature(rawValue: component) else{
-            fatalError("Invalid component \(component) found to represent a \(Feature.self).")
-        }
-        return self.title(for: row, feature: feature)
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print("Selected row = ", row)
-    }
-
-    
-    func title(for row: Int, feature: Feature) -> String?{
-        switch feature{
+    /// Find the title for the given feature.
+    func title(for row: Int, feature: Feature) -> String? {
+        switch feature {
         case .solarPanels:  return solarPanelsDataSource.title(for: row)
         case .greenhouses:  return greenhousesDataSource.title(for: row)
         case .size:         return sizeDataSource.title(for: row)
         }
     }
     
-    func value(for row: Int, feature: Feature) -> Double{
+    /// For the given feature, find the value for the given row.
+    func value(for row: Int, feature: Feature) -> Double {
         let value: Double?
         
-        switch feature{
-        case .solarPanels: value = solarPanelsDataSource.value(for: row)
-        case .greenhouses: value = greenhousesDataSource.value(for: row)
-        case .size:        value = sizeDataSource.value(for: row)
+        switch feature {
+        case .solarPanels:      value = solarPanelsDataSource.value(for: row)
+        case .greenhouses:      value = greenhousesDataSource.value(for: row)
+        case .size:             value = sizeDataSource.value(for: row)
         }
+        
         return value!
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    // MARK: - UIPickerViewDataSource
+    
+    /// Hardcoded 3 items in the picker.
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 3
     }
+    
+    /// Find the count of each column of the picker.
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        switch Feature(rawValue: component)! {
+        case .solarPanels:  return solarPanelsDataSource.values.count
+        case .greenhouses:  return greenhousesDataSource.values.count
+        case .size:         return sizeDataSource.values.count
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+        print(" Selected row = ", row)
+        updatePredictedPrice()
+    }
+  
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row : Int, forComponent component: Int) -> String?{
+        guard let feature = Feature(rawValue: component) else{
+            fatalError("Invalid component \(component) found to to represent a \(Feature.self). This should not happen based on the configuration set in the storyboard.")
+            
+        }
+        
+        return self.title(for: row, feature: feature)
+    }
+    
+    
+    func updatePredictedPrice() {
+        func selectedRow(for feature: Feature) -> Int {
+            return pickerView.selectedRow(inComponent: feature.rawValue)
+        }
+        
+        let solarPanels = self.value(for: selectedRow(for: .solarPanels), feature: .solarPanels)
+        let greenhouses = self.value(for: selectedRow(for: .greenhouses), feature: .greenhouses)
+        let size = self.value(for: selectedRow(for: .size), feature: .size)
+        
+        guard let marsHabitatPricerOutput = try? model.prediction(solarPanels: solarPanels, greenhouses: greenhouses, size: size) else {
+            fatalError("Unexpected runtime error.")
+        }
+        
+        let price = marsHabitatPricerOutput.price
+        priceLabel.text = priceFormatter.string(for: price)
+    }
 }
+    
 
 struct SolarPanelDataSource {
     
@@ -103,6 +148,7 @@ struct SolarPanelDataSource {
         guard index < values.count else { return nil}
         return Double(values[index])
     }
+    
 }
 
 struct GreenhousesDataSource {
@@ -132,7 +178,7 @@ struct SizeDataSource {
     
     func title(for index: Int) -> String?{
         guard index < values.count else { return nil }
-        return String(values[index])
+        return SizeDataSource.numberFormatter.string(from: NSNumber(value: values[index]))
     }
     func value(for index: Int) ->Double? {
         guard index < values.count else { return nil}

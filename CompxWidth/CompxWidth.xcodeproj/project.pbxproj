@@ -7,27 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9AFBBE1A20B4DC2F00AB5D14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFBBE1920B4DC2F00AB5D14 /* AppDelegate.swift */; };
-		9AFBBE1C20B4DC2F00AB5D14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFBBE1B20B4DC2F00AB5D14 /* ViewController.swift */; };
-		9AFBBE1F20B4DC2F00AB5D14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AFBBE1D20B4DC2F00AB5D14 /* Main.storyboard */; };
-		9AFBBE2120B4DC2F00AB5D14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AFBBE2020B4DC2F00AB5D14 /* Assets.xcassets */; };
-		9AFBBE2420B4DC2F00AB5D14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AFBBE2220B4DC2F00AB5D14 /* LaunchScreen.storyboard */; };
-		9AFBBE2C20B4E7A500AB5D14 /* marshabitatpricer.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9AFBBE2B20B4E7A500AB5D14 /* marshabitatpricer.mlmodel */; };
+		9AD6DCC920B7C8C000BFB1DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6DCC820B7C8C000BFB1DE /* AppDelegate.swift */; };
+		9AD6DCCB20B7C8C000BFB1DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD6DCCA20B7C8C000BFB1DE /* ViewController.swift */; };
+		9AD6DCCE20B7C8C000BFB1DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6DCCC20B7C8C000BFB1DE /* Main.storyboard */; };
+		9AD6DCD020B7C8C000BFB1DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6DCCF20B7C8C000BFB1DE /* Assets.xcassets */; };
+		9AD6DCD320B7C8C000BFB1DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AD6DCD120B7C8C000BFB1DE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9AFBBE1620B4DC2F00AB5D14 /* MarsHousePrediction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarsHousePrediction.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9AFBBE1920B4DC2F00AB5D14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9AFBBE1B20B4DC2F00AB5D14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9AFBBE1E20B4DC2F00AB5D14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9AFBBE2020B4DC2F00AB5D14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9AFBBE2320B4DC2F00AB5D14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9AFBBE2520B4DC2F00AB5D14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9AFBBE2B20B4E7A500AB5D14 /* marshabitatpricer.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = marshabitatpricer.mlmodel; path = ../../../../Downloads/marshabitatpricer.mlmodel; sourceTree = "<group>"; };
+		9AD6DCC520B7C8C000BFB1DE /* CompxWidth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompxWidth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AD6DCC820B7C8C000BFB1DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9AD6DCCA20B7C8C000BFB1DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9AD6DCCD20B7C8C000BFB1DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9AD6DCCF20B7C8C000BFB1DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9AD6DCD220B7C8C000BFB1DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9AD6DCD420B7C8C000BFB1DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9AFBBE1320B4DC2F00AB5D14 /* Frameworks */ = {
+		9AD6DCC220B7C8C000BFB1DE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,73 +35,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9AFBBE0D20B4DC2F00AB5D14 = {
+		9AD6DCBC20B7C8C000BFB1DE = {
 			isa = PBXGroup;
 			children = (
-				9AFBBE1820B4DC2F00AB5D14 /* MarsHousePrediction */,
-				9AFBBE1720B4DC2F00AB5D14 /* Products */,
+				9AD6DCC720B7C8C000BFB1DE /* CompxWidth */,
+				9AD6DCC620B7C8C000BFB1DE /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		9AFBBE1720B4DC2F00AB5D14 /* Products */ = {
+		9AD6DCC620B7C8C000BFB1DE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9AFBBE1620B4DC2F00AB5D14 /* MarsHousePrediction.app */,
+				9AD6DCC520B7C8C000BFB1DE /* CompxWidth.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9AFBBE1820B4DC2F00AB5D14 /* MarsHousePrediction */ = {
+		9AD6DCC720B7C8C000BFB1DE /* CompxWidth */ = {
 			isa = PBXGroup;
 			children = (
-				9AFBBE1920B4DC2F00AB5D14 /* AppDelegate.swift */,
-				9AFBBE1B20B4DC2F00AB5D14 /* ViewController.swift */,
-				9AFBBE2B20B4E7A500AB5D14 /* marshabitatpricer.mlmodel */,
-				9AFBBE1D20B4DC2F00AB5D14 /* Main.storyboard */,
-				9AFBBE2020B4DC2F00AB5D14 /* Assets.xcassets */,
-				9AFBBE2220B4DC2F00AB5D14 /* LaunchScreen.storyboard */,
-				9AFBBE2520B4DC2F00AB5D14 /* Info.plist */,
+				9AD6DCC820B7C8C000BFB1DE /* AppDelegate.swift */,
+				9AD6DCCA20B7C8C000BFB1DE /* ViewController.swift */,
+				9AD6DCCC20B7C8C000BFB1DE /* Main.storyboard */,
+				9AD6DCCF20B7C8C000BFB1DE /* Assets.xcassets */,
+				9AD6DCD120B7C8C000BFB1DE /* LaunchScreen.storyboard */,
+				9AD6DCD420B7C8C000BFB1DE /* Info.plist */,
 			);
-			path = MarsHousePrediction;
+			path = CompxWidth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9AFBBE1520B4DC2F00AB5D14 /* MarsHousePrediction */ = {
+		9AD6DCC420B7C8C000BFB1DE /* CompxWidth */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9AFBBE2820B4DC2F00AB5D14 /* Build configuration list for PBXNativeTarget "MarsHousePrediction" */;
+			buildConfigurationList = 9AD6DCD720B7C8C000BFB1DE /* Build configuration list for PBXNativeTarget "CompxWidth" */;
 			buildPhases = (
-				9AFBBE1220B4DC2F00AB5D14 /* Sources */,
-				9AFBBE1320B4DC2F00AB5D14 /* Frameworks */,
-				9AFBBE1420B4DC2F00AB5D14 /* Resources */,
+				9AD6DCC120B7C8C000BFB1DE /* Sources */,
+				9AD6DCC220B7C8C000BFB1DE /* Frameworks */,
+				9AD6DCC320B7C8C000BFB1DE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MarsHousePrediction;
-			productName = MarsHousePrediction;
-			productReference = 9AFBBE1620B4DC2F00AB5D14 /* MarsHousePrediction.app */;
+			name = CompxWidth;
+			productName = CompxWidth;
+			productReference = 9AD6DCC520B7C8C000BFB1DE /* CompxWidth.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9AFBBE0E20B4DC2F00AB5D14 /* Project object */ = {
+		9AD6DCBD20B7C8C000BFB1DE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Hyelee Lee";
 				TargetAttributes = {
-					9AFBBE1520B4DC2F00AB5D14 = {
+					9AD6DCC420B7C8C000BFB1DE = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 9AFBBE1120B4DC2F00AB5D14 /* Build configuration list for PBXProject "MarsHousePrediction" */;
+			buildConfigurationList = 9AD6DCC020B7C8C000BFB1DE /* Build configuration list for PBXProject "CompxWidth" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -111,55 +108,54 @@
 				en,
 				Base,
 			);
-			mainGroup = 9AFBBE0D20B4DC2F00AB5D14;
-			productRefGroup = 9AFBBE1720B4DC2F00AB5D14 /* Products */;
+			mainGroup = 9AD6DCBC20B7C8C000BFB1DE;
+			productRefGroup = 9AD6DCC620B7C8C000BFB1DE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9AFBBE1520B4DC2F00AB5D14 /* MarsHousePrediction */,
+				9AD6DCC420B7C8C000BFB1DE /* CompxWidth */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9AFBBE1420B4DC2F00AB5D14 /* Resources */ = {
+		9AD6DCC320B7C8C000BFB1DE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AFBBE2420B4DC2F00AB5D14 /* LaunchScreen.storyboard in Resources */,
-				9AFBBE2120B4DC2F00AB5D14 /* Assets.xcassets in Resources */,
-				9AFBBE1F20B4DC2F00AB5D14 /* Main.storyboard in Resources */,
+				9AD6DCD320B7C8C000BFB1DE /* LaunchScreen.storyboard in Resources */,
+				9AD6DCD020B7C8C000BFB1DE /* Assets.xcassets in Resources */,
+				9AD6DCCE20B7C8C000BFB1DE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9AFBBE1220B4DC2F00AB5D14 /* Sources */ = {
+		9AD6DCC120B7C8C000BFB1DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AFBBE2C20B4E7A500AB5D14 /* marshabitatpricer.mlmodel in Sources */,
-				9AFBBE1C20B4DC2F00AB5D14 /* ViewController.swift in Sources */,
-				9AFBBE1A20B4DC2F00AB5D14 /* AppDelegate.swift in Sources */,
+				9AD6DCCB20B7C8C000BFB1DE /* ViewController.swift in Sources */,
+				9AD6DCC920B7C8C000BFB1DE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9AFBBE1D20B4DC2F00AB5D14 /* Main.storyboard */ = {
+		9AD6DCCC20B7C8C000BFB1DE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9AFBBE1E20B4DC2F00AB5D14 /* Base */,
+				9AD6DCCD20B7C8C000BFB1DE /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		9AFBBE2220B4DC2F00AB5D14 /* LaunchScreen.storyboard */ = {
+		9AD6DCD120B7C8C000BFB1DE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9AFBBE2320B4DC2F00AB5D14 /* Base */,
+				9AD6DCD220B7C8C000BFB1DE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -167,7 +163,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		9AFBBE2620B4DC2F00AB5D14 /* Debug */ = {
+		9AD6DCD520B7C8C000BFB1DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -224,7 +220,7 @@
 			};
 			name = Debug;
 		};
-		9AFBBE2720B4DC2F00AB5D14 /* Release */ = {
+		9AD6DCD620B7C8C000BFB1DE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -274,30 +270,30 @@
 			};
 			name = Release;
 		};
-		9AFBBE2920B4DC2F00AB5D14 /* Debug */ = {
+		9AD6DCD820B7C8C000BFB1DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Y3Z2Z567H;
-				INFOPLIST_FILE = MarsHousePrediction/Info.plist;
+				INFOPLIST_FILE = CompxWidth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "kr.ac.sogang-HyeleeLee.MarsHousePrediction";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.ac.sogang-HyeleeLee.CompxWidth";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		9AFBBE2A20B4DC2F00AB5D14 /* Release */ = {
+		9AD6DCD920B7C8C000BFB1DE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Y3Z2Z567H;
-				INFOPLIST_FILE = MarsHousePrediction/Info.plist;
+				INFOPLIST_FILE = CompxWidth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "kr.ac.sogang-HyeleeLee.MarsHousePrediction";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.ac.sogang-HyeleeLee.CompxWidth";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -307,25 +303,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9AFBBE1120B4DC2F00AB5D14 /* Build configuration list for PBXProject "MarsHousePrediction" */ = {
+		9AD6DCC020B7C8C000BFB1DE /* Build configuration list for PBXProject "CompxWidth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9AFBBE2620B4DC2F00AB5D14 /* Debug */,
-				9AFBBE2720B4DC2F00AB5D14 /* Release */,
+				9AD6DCD520B7C8C000BFB1DE /* Debug */,
+				9AD6DCD620B7C8C000BFB1DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9AFBBE2820B4DC2F00AB5D14 /* Build configuration list for PBXNativeTarget "MarsHousePrediction" */ = {
+		9AD6DCD720B7C8C000BFB1DE /* Build configuration list for PBXNativeTarget "CompxWidth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9AFBBE2920B4DC2F00AB5D14 /* Debug */,
-				9AFBBE2A20B4DC2F00AB5D14 /* Release */,
+				9AD6DCD820B7C8C000BFB1DE /* Debug */,
+				9AD6DCD920B7C8C000BFB1DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 9AFBBE0E20B4DC2F00AB5D14 /* Project object */;
+	rootObject = 9AD6DCBD20B7C8C000BFB1DE /* Project object */;
 }
