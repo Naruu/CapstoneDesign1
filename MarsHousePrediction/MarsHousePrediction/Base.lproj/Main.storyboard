@@ -107,6 +107,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="price" destination="9pQ-Zv-8ZE" id="jjq-8A-Dmf"/>
                         <outlet property="priceLabel" destination="D72-zP-slo" id="ZAy-7v-K9g"/>
                     </connections>
                 </viewController>
